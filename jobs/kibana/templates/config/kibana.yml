@@ -128,3 +128,31 @@ elasticsearch.shardTimeout: <%= p('kibana.shard_timeout') %>
 <% if_p('kibana.config_options') do |config_options| %>
 <%= config_options.to_yaml.gsub(/---/, '') %>
 <% end %>
+
+<% if_p('xpack.infra.enabled') do |enabled| -%>
+xpack.infra.enabled: <%= enabled %>
+<% end -%>
+<% if_p('xpack.infra.sources.default.logAlias') do |logAlias| -%>
+xpack.infra.sources.default.logAlias: <%= logAlias %>
+<% end -%>
+<% if_p('xpack.infra.sources.default.metricAlias') do |metricAlias| -%>
+xpack.infra.sources.default.metricAlias: <%= metricAlias %>
+<% end -%>
+<% if_p('xpack.infra.sources.default.fields.timestamp') do |timestamp| -%>
+xpack.infra.sources.default.fields.timestamp: <%= timestamp %>
+<% end -%>
+<% if_p('xpack.infra.sources.default.fields.message') do |message| -%>
+xpack.infra.sources.default.fields.message: <%= message %>
+<% end -%>
+<% if_p('xpack.infra.sources.default.fields.tiebreaker') do |tiebreaker| -%>
+xpack.infra.sources.default.fields.tiebreaker: <%= tiebreaker %>
+<% end -%>
+<% if_p('xpack.infra.sources.default.fields.host') do |host| -%>
+xpack.infra.sources.default.fields.host: <%= host %>
+<% end -%>
+<% if_p('xpack.infra.sources.default.fields.container') do |container| -%>
+xpack.infra.sources.default.fields.container: <%= container %>
+<% end -%>
+<% if_p('xpack.infra.sources.default.fields.pod') do |pod| -%>
+xpack.infra.sources.default.fields.pod: <%= pod %>
+<% end -%>
